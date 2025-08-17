@@ -12,11 +12,14 @@ function main() {
 }
 
 function getHumanChoice() {
-
+    let cards = document.querySelector("#player-cards")
+    cards.addEventListener("click", (e)=> {
+        console.log(e.target.id)
+    })
 }
 
 function getComputerChoice() {
-    
+
 }
 
 
