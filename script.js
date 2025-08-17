@@ -19,7 +19,9 @@ function getHumanChoice() {
 }
 
 function getComputerChoice() {
-
+    const choices = ["rock", "paper", "scissors"];
+    let computerChoice = choices[Math.floor(Math.random() * 3)];
+    return computerChoice;
 }
 
 
@@ -50,11 +52,7 @@ function getComputerChoice() {
 //     else return getHumanChoice();
 // }
 
-// function getComputerChoice() {
-//     const choices = ["rock", "paper", "scissors"];
-//     let computerChoice = choices[Math.floor(Math.random() * 3)];
-//     return computerChoice;
-// }
+
 
 // let humanScore = 0;
 // let computerScore = 0;
