@@ -14,6 +14,7 @@ function main() {
             humanChoice = e.target.id
             let cpuChoice = getComputerChoice();
             gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
+            updateArena()
         })
 
 }
@@ -23,6 +24,16 @@ function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     let computerChoice = choices[Math.floor(Math.random() * 3)];
     return computerChoice;
+}
+
+function updateArena() {
+    let arena = document.querySelector("#arena")
+    arena.innerHTML = `
+        <img id="chosenHumanCard" src="/resources/rps-${gameStats.roundChoices.human}.png">
+        <img id="chosenCpuCard" src="/resources/rps-${gameStats.roundChoices.cpu}.png">
+    `;
+
+
 }
 
 
