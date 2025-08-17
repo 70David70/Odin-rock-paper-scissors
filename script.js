@@ -8,15 +8,16 @@ const gameStats = {
 }
 
 function main() {
+        let humanCards = document.querySelector("#player-cards")
+        let humanChoice;
+        humanCards.addEventListener("click", (e)=> {
+            humanChoice = e.target.id
+            let cpuChoice = getComputerChoice();
+            gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
+        })
 
 }
 
-function getHumanChoice() {
-    let cards = document.querySelector("#player-cards")
-    cards.addEventListener("click", (e)=> {
-        console.log(e.target.id)
-    })
-}
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -26,6 +27,7 @@ function getComputerChoice() {
 
 
 
+main()
 
 
 
