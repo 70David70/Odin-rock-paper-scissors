@@ -28,3 +28,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#arena img {
+    width: 5vw
+}
