@@ -46,3 +46,8 @@ body {
 #arena #chosenCpuCard {
     transform: rotate(180deg);
 }
+
+#hud-screen {
+    z-index: 2;
+    position: absolute;
+}
