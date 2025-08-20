@@ -47,7 +47,44 @@ body {
     transform: rotate(180deg);
 }
 
+h3 {
+    width: fit-content;
+}
+
 #hud-screen {
     z-index: 2;
     position: absolute;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+}
+
+#cpu-hud, #player-hud {
+    position: absolute;
+}
+#cpu-hud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 35vh;
+    left: 10vw;
+}
+#player-hud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 35vh;
+    right: 10vw;
+    
+}
+
+
+#playerHearts, #cpuHearts {
+    display: flex;
+    gap: 1vh;
+}
+#playerHearts img, #cpuHearts img {
+    height: 3vh;
 }

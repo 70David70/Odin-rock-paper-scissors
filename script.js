@@ -10,7 +10,9 @@ const gameStats = {
 function main() {
         let humanCards = document.querySelector("#player-cards")
         let humanChoice;
+        setScore()
         humanCards.addEventListener("click", (e)=> {
+            console.log("clicked")
             humanChoice = e.target.id
             let cpuChoice = getComputerChoice();
             gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
@@ -32,8 +34,17 @@ function updateArena() {
         <img id="chosenCpuCard" src="/resources/rps-${gameStats.roundChoices.cpu}.png">
         <img id="chosenHumanCard" src="/resources/rps-${gameStats.roundChoices.human}.png">
     `;
+}
 
-
+function setScore() {
+    let playerHearts = document.querySelector("#playerHearts")
+    let cpuHearts = document.querySelector("#cpuHearts")
+    for(let i = 1; i <= gameStats.playerScore; i++) {
+        playerHearts.insertAdjacentHTML("beforeend", `<img id="playerHeart-${i}" src="/resources/heart.png">`);
+    }
+    for(let i = 1; i <= gameStats.cpuScore; i++) {
+        cpuHearts.insertAdjacentHTML("beforeend", `<img id="cpuHeart-${i}" src="/resources/heart.png">`);
+    }
 }
 
 
