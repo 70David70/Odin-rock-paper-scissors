@@ -1,6 +1,5 @@
 .cards img {
-    width: 10vw;
-    height: auto;
+    height: 18vh;
 }
 
 .cards-layer {
@@ -30,5 +29,20 @@ body {
 }
 
 #arena img {
-    width: 5vw
+    width: 20%;
+    height: 20%;
+    object-fit:contain ;
+}
+#arena {
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    margin-bottom: 10vh;
+}
+#arena #chosenCpuCard {
+    transform: rotate(180deg);
 }

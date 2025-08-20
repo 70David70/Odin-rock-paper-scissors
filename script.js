@@ -29,8 +29,8 @@ function getComputerChoice() {
 function updateArena() {
     let arena = document.querySelector("#arena")
     arena.innerHTML = `
-        <img id="chosenHumanCard" src="/resources/rps-${gameStats.roundChoices.human}.png">
         <img id="chosenCpuCard" src="/resources/rps-${gameStats.roundChoices.cpu}.png">
+        <img id="chosenHumanCard" src="/resources/rps-${gameStats.roundChoices.human}.png">
     `;
 
 
