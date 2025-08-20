@@ -12,7 +12,6 @@ function main() {
         let humanChoice;
         setScore()
         humanCards.addEventListener("click", (e)=> {
-            console.log("clicked")
             humanChoice = e.target.id
             let cpuChoice = getComputerChoice();
             gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
@@ -45,6 +44,20 @@ function setScore() {
     for(let i = 1; i <= gameStats.cpuScore; i++) {
         cpuHearts.insertAdjacentHTML("beforeend", `<img id="cpuHeart-${i}" src="/resources/heart.png">`);
     }
+}
+
+function roundWinner() {
+    const {human, cpu} = gameStats.roundChoices
+
+    if (human === cpu) return "draw";
+    
+    if (human === "rock" && cpu === "scissors" ||
+        human === "paper" && cpu === "rock" ||
+        human === "scissors" && cpu == "paper"
+    )
+    return "player";
+    else return "cpu";
+
 }
 
 
