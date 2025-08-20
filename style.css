@@ -67,16 +67,16 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    top: 35vh;
-    left: 10vw;
+    top: 10vh;
+    right: 5vw;
 }
 #player-hud {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    bottom: 35vh;
-    right: 10vw;
+    bottom: 10vh;
+    left: 5vw;
     
 }
 
