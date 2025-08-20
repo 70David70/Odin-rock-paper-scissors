@@ -16,6 +16,10 @@ function main() {
             let cpuChoice = getComputerChoice();
             gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
             updateArena()
+
+            setTimeout(()=> {
+                // to do --add a function that takes roundWinner() and updates the hud
+            }, 1000)
         })
 
 }
@@ -59,6 +63,13 @@ function roundWinner() {
     else return "cpu";
 
 }
+
+/*
+    TODOs:
+        Create a function that takes roundWinner() print a flash then removes a heart from the loser
+            if the loser is at 1 heart before removing a heart:
+                activate a function that shows GAME OVER screen
+*/
 
 
 
