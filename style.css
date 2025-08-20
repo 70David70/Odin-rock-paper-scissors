@@ -1,6 +1,10 @@
 .cards img {
     height: 18vh;
 }
+.cards img:hover {
+    border: 10px solid rgba(255, 0, 0, 0.274);
+    border-radius: 4vh;
+}
 
 .cards-layer {
     z-index: 1;
