@@ -11,6 +11,7 @@ function main() {
         let humanCards = document.querySelector("#player-cards")
         let humanChoice;
         setScore()
+        cleanArena()
         humanCards.addEventListener("click", (e)=> {
             humanChoice = e.target.id
             let cpuChoice = getComputerChoice();
@@ -19,7 +20,7 @@ function main() {
             setTimeout(()=> {
                 // to do --add a function that takes roundWinner() and updates the hud
             }, 100)
-        })
+        }, {once: true})
 
 }
 
@@ -44,6 +45,12 @@ function updateArena() {
 function setScore() {
     let playerHearts = document.querySelector("#playerHearts")
     let cpuHearts = document.querySelector("#cpuHearts")
+
+    //clean the hud
+    playerHearts.innerHTML = ""
+    cpuHearts.innerHTML = ""
+
+    //insert currect health bar
     for(let i = 1; i <= gameStats.playerScore; i++) {
         playerHearts.insertAdjacentHTML("beforeend", `<img id="playerHeart-${i}" src="/resources/heart.png">`);
     }
@@ -84,6 +91,10 @@ function flash(condition) {
     requestAnimationFrame(() => {
         flash.classList.remove("active");
     });
+}
+
+function cleanArena() {
+    gameStats.roundChoices = null
 }
 
 
