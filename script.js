@@ -7,20 +7,32 @@ const gameStats = {
     roundChoices: null
 }
 
+let roundInProgress = false;
+
 function main() {
         let humanCards = document.querySelector("#player-cards")
-        let humanChoice;
-        setScore()
-        cleanArena()
-        humanCards.addEventListener("click", (e)=> {
-            humanChoice = e.target.id
-            let cpuChoice = getComputerChoice();
-            gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
-            updateArena()
-            setTimeout(()=> {
-                // to do --add a function that takes roundWinner() and updates the hud
-            }, 100)
-        }, {once: true})
+            setScore()
+            humanCards.addEventListener("mouseup", (e)=> {
+                if (roundInProgress) return;
+                roundInProgress = true;
+
+                let humanChoice = e.target.id;
+                let cpuChoice = getComputerChoice();
+                gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
+                
+                updateArena()
+                setTimeout(()=> {
+                    /*
+                        check winner
+                            if game didn't end
+                                update healthbar
+                                play another round
+                    */
+                   roundInProgress = false;
+                   cleanArena()
+                }, 1000)
+            })
+            cleanArena()
 
 }
 
@@ -95,6 +107,8 @@ function flash(condition) {
 
 function cleanArena() {
     gameStats.roundChoices = null
+    let arena = document.querySelector("#arena")
+    arena.innerHTML = "";
 }
 
 
