@@ -2,8 +2,8 @@
     height: 18vh;
 }
 .cards img:hover {
-    border: 10px solid rgba(255, 0, 0, 0.274);
-    border-radius: 4vh;
+    border: 10px solid rgba(255, 255, 255, 0.61);
+    border-radius: 3vh;
 }
 
 .cards-layer {
