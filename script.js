@@ -34,9 +34,12 @@ function getComputerChoice() {
 function updateArena() {
     let arena = document.querySelector("#arena")
     arena.innerHTML = `
-        <img id="chosenCpuCard" src="/resources/rps-${gameStats.roundChoices.cpu}.png">
         <img id="chosenHumanCard" src="/resources/rps-${gameStats.roundChoices.human}.png">
     `;
+    setTimeout(() => {
+        arena.insertAdjacentHTML("afterbegin", `
+            <img id="chosenCpuCard" src="/resources/rps-${gameStats.roundChoices.cpu}.png">`)
+    }, 500);
 }
 
 function setScore() {
