@@ -80,8 +80,8 @@ function roundWinner() {
         human === "paper" && cpu === "rock" ||
         human === "scissors" && cpu == "paper"
     )
-    return "player";
-    else return "cpu";
+    return "win";
+    else return "lose";
 
 }
 
