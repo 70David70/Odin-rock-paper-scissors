@@ -16,10 +16,9 @@ function main() {
             let cpuChoice = getComputerChoice();
             gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
             updateArena()
-
             setTimeout(()=> {
                 // to do --add a function that takes roundWinner() and updates the hud
-            }, 1000)
+            }, 100)
         })
 
 }
@@ -73,6 +72,19 @@ function roundWinner() {
             if the loser is at 1 heart before removing a heart:
                 activate a function that shows GAME OVER screen
 */
+
+function flash(condition) {
+    let flash = document.querySelector("#flash");
+    flash.className = ""
+    flash.classList.add(`active`);
+    if (condition === "win") flash.style.backgroundColor = "yellow";
+    else if (condition === "lose") flash.style.backgroundColor = "red"
+    else flash.style.backgroundColor = "white"
+
+    requestAnimationFrame(() => {
+        flash.classList.remove("active");
+    });
+}
 
 
 
