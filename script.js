@@ -129,9 +129,6 @@ function statusScreen(condition) {
     let button = document.querySelector("#button");
 
     if (condition == "start") {
-        requestAnimationFrame(()=> {
-            screen.classList.add('active');
-        })
         screen.style.backgroundColor = "rgba(41, 31, 31, 0.64)";
         title.textContent = "Start the game";
         button.textContent = "START";
@@ -140,9 +137,29 @@ function statusScreen(condition) {
             screen.classList.remove('active')
         })
     }
-    else {
+    else if (condition == "win"){
+        screen.style.backgroundColor = "rgba(122, 150, 91, 0.64)";
+        title.textContent = "VICTORY";
+        discreption.textContent = "You have won aginst our ai, Would you like to start a new game?"
+        button.textContent = "NEW GAME";
+        button.addEventListener("click", ()=> {
 
+            screen.classList.remove('active')
+        })
     }
+    else {
+        screen.style.backgroundColor = "rgba(158, 51, 51, 0.71)";
+        title.textContent = "You Lose";
+        discreption.textContent = "You have lost, do you want to try again?"
+        button.textContent = "NEW GAME";
+        button.addEventListener("click", ()=> {
+
+            screen.classList.remove('active')
+        })
+    }
+    requestAnimationFrame(()=> {
+            screen.classList.add('active');
+        })
 }
 
 
