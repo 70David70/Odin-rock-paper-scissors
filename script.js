@@ -21,15 +21,18 @@ function main() {
                 gameStats.roundChoices = {human: humanChoice, cpu: cpuChoice}
                 
                 updateArena()
+                
+                //round logic
                 setTimeout(()=> {
-                    /*
-                        check winner
-                            if game didn't end
-                                update healthbar
-                                play another round
-                    */
+                    if (gameStats.playerScore > 0 && gameStats.cpuScore > 0) {
+                        flash(roundWinner())
+                        // updateHud()
+                        cleanArena()
+                    }
+                    else {
+                        //GAMEOVER
+                    }
                    roundInProgress = false;
-                   cleanArena()
                 }, 1000)
             })
             cleanArena()
