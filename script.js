@@ -97,11 +97,11 @@ function roundWinner() {
 
 function flash(condition) {
     let flash = document.querySelector("#flash");
-    flash.className = ""
-    flash.classList.add(`active`);
+
     if (condition === "win") flash.style.backgroundColor = "yellow";
     else if (condition === "lose") flash.style.backgroundColor = "red"
     else flash.style.backgroundColor = "white"
+    flash.classList.add(`active`);
 
     requestAnimationFrame(() => {
         flash.classList.remove("active");
