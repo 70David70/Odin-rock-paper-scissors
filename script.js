@@ -9,6 +9,7 @@ const gameStats = {
 
 let roundInProgress = false;
 
+statusScreen("start")
 function main() {
         let humanCards = document.querySelector("#player-cards")
             setScore()
@@ -119,6 +120,29 @@ function cleanArena() {
     gameStats.roundChoices = null
     let arena = document.querySelector("#arena")
     arena.innerHTML = "";
+}
+
+function statusScreen(condition) {
+    let screen = document.querySelector("#status-screen")
+    let title = document.querySelector("#title");
+    let discreption = document.querySelector("#description");
+    let button = document.querySelector("#button");
+
+    if (condition == "start") {
+        requestAnimationFrame(()=> {
+            screen.classList.add('active');
+        })
+        screen.style.backgroundColor = "rgba(41, 31, 31, 0.64)";
+        title.textContent = "Start the game";
+        button.textContent = "START";
+        button.addEventListener("click", ()=> {
+
+            screen.classList.remove('active')
+        })
+    }
+    else {
+
+    }
 }
 
 
