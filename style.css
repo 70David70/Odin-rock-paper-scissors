@@ -21,6 +21,7 @@
 }
 
 body {
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     top: 0;
     left: 0;
@@ -130,12 +131,12 @@ h3 {
     pointer-events: none;
     opacity: 0;
     font-size: 10vh;
-    transition: opacity 1s ease-out;
+    transition: opacity 0.5s ease-out;
 }
 #status-screen.active {
     opacity: 1;
     pointer-events: all;
-    transition: opacity 1s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 #status-screen #title {
     color: white;
@@ -146,13 +147,18 @@ h3 {
     margin: 0;
     border: none;
     border-radius: 1vh;
-    color: rgb(166, 176, 185);
+    color: rgb(255, 255, 255);
     background-color: rgba(33, 34, 39, 0.664);
     padding: 50px;
     border: 1px solid yellow;
-    width: 25%;
+    width: 30%;
 }
 #status-screen button:hover {
     background-color: rgba(64, 57, 75, 0.377);
     
+}
+#status-screen p {
+    font-size: 3vh;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
 }

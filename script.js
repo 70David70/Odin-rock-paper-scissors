@@ -31,8 +31,11 @@ function main() {
                         cleanArena()
                         setScore()
                     }
+                    else if (gameStats.playerScore > 0 && gameStats.cpuScore == 0) {
+                        statusScreen("win");
+                    }
                     else {
-                        //GAMEOVER
+                        statusScreen("lose");
                     }
                    roundInProgress = false;
                 }, 1000)
@@ -138,9 +141,9 @@ function statusScreen(condition) {
         })
     }
     else if (condition == "win"){
-        screen.style.backgroundColor = "rgba(122, 150, 91, 0.64)";
+        screen.style.backgroundColor = "rgba(146, 196, 89, 0.64)";
         title.textContent = "VICTORY";
-        discreption.textContent = "You have won aginst our ai, Would you like to start a new game?"
+        discreption.textContent = "You have won!!! Would you like to start a new game?"
         button.textContent = "NEW GAME";
         button.addEventListener("click", ()=> {
 
@@ -148,9 +151,9 @@ function statusScreen(condition) {
         })
     }
     else {
-        screen.style.backgroundColor = "rgba(158, 51, 51, 0.71)";
+        screen.style.backgroundColor = "rgba(212, 53, 53, 0.71)";
         title.textContent = "You Lose";
-        discreption.textContent = "You have lost, do you want to try again?"
+        discreption.textContent = "You have lost..... do you want to try again?"
         button.textContent = "NEW GAME";
         button.addEventListener("click", ()=> {
 
