@@ -25,9 +25,10 @@ function main() {
                 //round logic
                 setTimeout(()=> {
                     if (gameStats.playerScore > 0 && gameStats.cpuScore > 0) {
-                        flash(roundWinner())
+                        roundWinner()
                         // updateHud()
                         cleanArena()
+                        setScore()
                     }
                     else {
                         //GAMEOVER
@@ -77,14 +78,20 @@ function setScore() {
 function roundWinner() {
     const {human, cpu} = gameStats.roundChoices
 
-    if (human === cpu) return "draw";
+    if (human === cpu) flash("draw");
     
-    if (human === "rock" && cpu === "scissors" ||
+    else if (human === "rock" && cpu === "scissors" ||
         human === "paper" && cpu === "rock" ||
         human === "scissors" && cpu == "paper"
     )
-    return "win";
-    else return "lose";
+    {
+        gameStats.cpuScore = gameStats.cpuScore - 1;
+         flash("win");
+    }
+    else {
+        gameStats.playerScore = gameStats.playerScore - 1;
+        flash("lose");
+    }
 
 }
 
