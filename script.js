@@ -25,18 +25,19 @@ function main() {
                 
                 //round logic
                 setTimeout(()=> {
-                    if (gameStats.playerScore > 0 && gameStats.cpuScore > 0) {
+                    if (gameStats.playerScore >= 1 && gameStats.cpuScore >= 1) {
                         roundWinner()
                         // updateHud()
                         cleanArena()
                         setScore()
+                        if (gameStats.playerScore > 0 && gameStats.cpuScore == 0) {
+                            statusScreen("win");
+                        }
+                        else if (gameStats.playerScore == 0 && gameStats.cpuScore > 0) {
+                            statusScreen("lose");
+                        }
                     }
-                    else if (gameStats.playerScore > 0 && gameStats.cpuScore == 0) {
-                        statusScreen("win");
-                    }
-                    else {
-                        statusScreen("lose");
-                    }
+                    
                    roundInProgress = false;
                 }, 1000)
             })
@@ -146,7 +147,10 @@ function statusScreen(condition) {
         discreption.textContent = "You have won!!! Would you like to start a new game?"
         button.textContent = "NEW GAME";
         button.addEventListener("click", ()=> {
-
+            cleanArena()
+            gameStats.playerScore = 5;
+            gameStats.cpuScore = 5;
+            main()
             screen.classList.remove('active')
         })
     }
@@ -156,7 +160,9 @@ function statusScreen(condition) {
         discreption.textContent = "You have lost..... do you want to try again?"
         button.textContent = "NEW GAME";
         button.addEventListener("click", ()=> {
-
+            gameStats.playerScore = 5;
+            gameStats.cpuScore = 5;
+            main()
             screen.classList.remove('active')
         })
     }
