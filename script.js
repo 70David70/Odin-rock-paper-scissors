@@ -114,7 +114,7 @@ function flash(condition) {
     else if (condition === "lose") flash.style.backgroundColor = "red"
     else flash.style.backgroundColor = "white"
     flash.classList.add(`active`);
-
+    void flash.offsetWidth;
     requestAnimationFrame(() => {
         flash.classList.remove("active");
     });
