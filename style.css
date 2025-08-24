@@ -21,8 +21,6 @@
 }
 
 body {
-    background: url(resources/rps-background.png);
-    background-size: cover;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     top: 0;
@@ -33,6 +31,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-image: url("resources/rps-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #arena img {
