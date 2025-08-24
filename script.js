@@ -55,11 +55,11 @@ function getComputerChoice() {
 function updateArena() {
     let arena = document.querySelector("#arena")
     arena.innerHTML = `
-        <img id="chosenHumanCard" src="/resources/rps-${gameStats.roundChoices.human}.png">
+        <img id="chosenHumanCard" src="resources/rps-${gameStats.roundChoices.human}.png">
     `;
     setTimeout(() => {
         arena.insertAdjacentHTML("afterbegin", `
-            <img id="chosenCpuCard" src="/resources/rps-${gameStats.roundChoices.cpu}.png">`)
+            <img id="chosenCpuCard" src="resources/rps-${gameStats.roundChoices.cpu}.png">`)
     }, 500);
 }
 
@@ -73,10 +73,10 @@ function setScore() {
 
     //insert currect health bar
     for(let i = 1; i <= gameStats.playerScore; i++) {
-        playerHearts.insertAdjacentHTML("beforeend", `<img id="playerHeart-${i}" src="/resources/heart.png">`);
+        playerHearts.insertAdjacentHTML("beforeend", `<img id="playerHeart-${i}" src="resources/heart.png">`);
     }
     for(let i = 1; i <= gameStats.cpuScore; i++) {
-        cpuHearts.insertAdjacentHTML("beforeend", `<img id="cpuHeart-${i}" src="/resources/heart.png">`);
+        cpuHearts.insertAdjacentHTML("beforeend", `<img id="cpuHeart-${i}" src="resources/heart.png">`);
     }
 }
 
