@@ -100,12 +100,6 @@ function roundWinner() {
 
 }
 
-/*
-    TODOs:
-        Create a function that takes roundWinner() print a flash then removes a heart from the loser
-            if the loser is at 1 heart before removing a heart:
-                activate a function that shows GAME OVER screen
-*/
 
 function flash(condition) {
     let flash = document.querySelector("#flash");
@@ -176,76 +170,3 @@ function statusScreen(condition) {
 main()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getHumanChoice() {
-//     let humanChoice = prompt("What's your play: rock, paper, scissors");
-//     if(["rock", "paper", "scissors"].includes(humanChoice.toLowerCase())) {
-//         return humanChoice.toLowerCase();
-//     }
-//     else return getHumanChoice();
-// }
-
-
-
-// let humanScore = 0;
-// let computerScore = 0;
-
-// function playGame() {
-//     for (let i = 0; i < 5; i++) {
-//         const human = getHumanChoice()
-//         const computer = getComputerChoice()
-//         playRound(human, computer);
-
-
-//         function playRound(humanChoice, computerChoice) {
-
-//             if (humanChoice === "rock" && computerChoice === "paper") {
-//                 console.log("You lose! paper beats rock");
-//                 computerScore++;
-//             }
-//             else if (humanChoice === "rock" && computerChoice === "scissors") {
-//                 console.log("You win! rock beats scissors");
-//                 humanScore++;
-//             }
-
-//             else if (humanChoice === "paper" && computerChoice === "rock") {
-//                 console.log("You win! paper beats rock");
-//                 humanScore++;
-//             }
-//             else if (humanChoice === "paper" && computerChoice === "scissors") {
-//                 console.log("You lose! scissors beats paper");
-//                 computerScore++;
-//             }
-
-//             else if (humanChoice === "scissors" && computerChoice === "paper") {
-//                 console.log("You win! scissors beats paper");
-//                 humanScore++;
-//             }
-//             else if (humanChoice === "scissors" && computerChoice === "rock") {
-//                 console.log("You lose! rock beats scissors");
-//                 computerScore++;
-//             }
-
-//             else console.log("That's a draw you both chose " + humanChoice)
-
-//         }
-//         console.log("Human score: " + humanScore, "Computer score: " + computerScore)
-
-//     }
-// }
-// playGame()
